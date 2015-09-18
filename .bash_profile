@@ -1,4 +1,5 @@
 export PS1="\h:\W 😈  "
+export CLICOLOR=1
 
 ##aliases
 
