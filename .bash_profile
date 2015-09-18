@@ -10,7 +10,7 @@ alias idiff='/Applications/IntelliJ\ IDEA\ 13.app/Contents/MacOS/idea diff &'
 alias idiff14='/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS/idea diff &'
 
 #start chrome without extensions and a clean profile
-alias chromedev='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-extensions --user-data-dir=/tmp &'
+alias chromedev='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-extensions --user-data-dir=/tmp 2>/dev/null &'
 
 #general
 alias ll='ls -alh'
