@@ -7,15 +7,18 @@ export CLICOLOR=1
 alias fuck='sudo $(history -p \!\!)'
 
 #start IntelliJ diff
-alias idiff='/Applications/IntelliJ\ IDEA\ 13.app/Contents/MacOS/idea diff &'
-alias idiff14='/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS/idea diff &'
+idiff() {
+  # IntelliJ diff needs absolute pathnames
+  file1=$(cd "$(dirname "$1")"; pwd)/$(basename "$1")
+  file2=$(cd "$(dirname "$2")"; pwd)/$(basename "$2")
+  /Applications/IntelliJ\ IDEA\ 13.app/Contents/MacOS/idea diff $file1 $file2 &
+}
 
 #start chrome without extensions and a clean profile
 alias chromedev='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-extensions --user-data-dir=/tmp 2>/dev/null &'
 
 #general
 alias ll='ls -alh'
-
 
 ## bigger open file limit
 ulimit -n 65536
