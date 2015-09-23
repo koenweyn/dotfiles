@@ -4,9 +4,6 @@ set -e # Any subsequent(*) commands which fail will cause the shell script to ex
 
 # make links
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
-
-#load bash_profile
-. ~/.bash_profile
+ln -sf ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 
 echo "Successfully updated dotfiles!"
-
