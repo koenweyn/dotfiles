@@ -1,5 +1,7 @@
-### prompt
+################################################################################
+### fish config
 
+#prompt
 function fish_prompt --description "Write out the prompt (based on classic)"
 	# Just calculate this once, to save a few cycles when displaying the prompt
 	if not set -q __fish_prompt_hostname
@@ -24,10 +26,15 @@ function fish_prompt --description "Write out the prompt (based on classic)"
 	echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
 end
 
-### aliases
+#welcome message
+set fish_greeting ""
 
-#reapplies the last command with sudo
-alias fuck="sudo (history | head -1)"
+################################################################################
+### functions and aliases
+
+
+alias fuck="sudo (history | head -1)" #reapplies the last command with sudo
+alias psg="ps -ef | grep "
 
 function rp
   set dir (pwd)
@@ -48,15 +55,31 @@ function chromedev
 end
 funcsave chromedev
 
+################################################################################
 ### system
 
 # bigger open file limit
 ulimit -n 65536
 ulimit -u 2048
 
+################################################################################
 ### exports
 
-# export PS1="\h:\W 😈  "
+set -x P4CONFIG ".p4"
 set -x CLICOLOR "1"
 set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home"
-set -x P4CONFIG "~/.p4config"
+
+# other files containing environment variables in the form 'name=val'
+for file in ~/.environment/*
+	if test -e $file
+		# echo "Reading variables from $file"
+    for var in (cat $file)
+			set name (echo $var | cut -d= -f1)
+			set val (echo $var | cut -d= -f2)
+			# echo "export $name"
+			set -x $name $val
+		end
+	else
+		echo "File does not exist: $file"
+	end
+end
