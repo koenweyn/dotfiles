@@ -1,0 +1,28 @@
+<templateSet group="My - JavaScript">
+  <template name="gsp" value="function getSet$PROPERTY$(a$PROPERTY$) {&#10;  if (arguments.length) {&#10;    $LPROPERTY$ = a$PROPERTY$;&#10;  }&#10;  return $LPROPERTY$;&#10;}" description="Creates a JQuery style getter/setter" toReformat="false" toShortenFQNames="true">
+    <variable name="PROPERTY" expression="capitalize(jsSuggestVariableName())" defaultValue="" alwaysStopAt="true" />
+    <variable name="LPROPERTY" expression="decapitalize(PROPERTY)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="iife" value="(function () {&#10;  'use strict';&#10;  $CODE$&#10;}());" description="Immediately invoked function expression" toReformat="false" toShortenFQNames="true">
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="logv" value="console.log('$EXPR$ = ' + $EXPR$);" description="Logs a variable to the console" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="jsSuggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

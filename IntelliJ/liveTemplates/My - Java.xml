@@ -1,0 +1,19 @@
+<templateSet group="My - Java">
+  <template name="logv" value="$LOG$.debug(&quot;$EXPR_COPY$ = &quot; + $EXPR$);" description="Logs a variable in the debug log" toReformat="true" toShortenFQNames="true">
+    <variable name="LOG" expression="variableOfType(&quot;org.apache.commons.logging.Log&quot;)" defaultValue="&quot;LOG&quot;" alwaysStopAt="false" />
+    <variable name="EXPR" expression="variableOfType(&quot;&quot;)" defaultValue="&quot;expr&quot;" alwaysStopAt="true" />
+    <variable name="EXPR_COPY" expression="escapeString(EXPR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_STATEMENT" value="true" />
+      <option name="GROOVY" value="false" />
+      <option name="GROOVY_STATEMENT" value="false" />
+    </context>
+  </template>
+  <template name="ilog" value="private static final Log LOG = LogFactory.getLog($CLASS$.class);" description="Creates a logger" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
