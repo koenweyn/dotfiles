@@ -35,6 +35,7 @@ set fish_greeting ""
 
 alias fuck="sudo (history | head -1)" #reapplies the last command with sudo
 alias psg="ps -ef | grep "
+alias lssh="lsof -i 4tcp -P | grep 'ssh'"
 
 function rp
   set dir (pwd)
