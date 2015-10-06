@@ -66,6 +66,10 @@ ulimit -u 2048
 ################################################################################
 ### exports
 
+# Language Default
+set -x LC_ALL en_US.UTF-8
+set -x LC_CTYPE en_US.UTF-8
+
 set -x P4CONFIG ".p4"
 set -x CLICOLOR "1"
 set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home"
