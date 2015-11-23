@@ -51,6 +51,11 @@ function idiff
 end
 funcsave idiff
 
+function idiff15
+  /Applications/IntelliJ\ IDEA\ 15.app/Contents/MacOS/idea diff $argv &
+end
+funcsave idiff15
+
 #start chrome without extensions and a clean profile
 function chromedev
   /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --profile-directory="Profile 1" $argv 2>/dev/null &
