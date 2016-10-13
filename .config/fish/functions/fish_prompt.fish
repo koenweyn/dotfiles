@@ -4,12 +4,12 @@ function get_git_status -d "Gets the current git status"
     set -l dirty (command git status -s --ignore-submodules=dirty | wc -l | sed -e 's/^ *//' -e 's/ *$//' 2> /dev/null)
     set -l ref (command git describe --tags --exact-match ^/dev/null ; or command git symbolic-ref --short HEAD 2> /dev/null ; or command git rev-parse --short HEAD 2> /dev/null)
 
+    set_color normal
+
     if [ "$dirty" != "0" ]
       set_color -b red
-      set_color white
     else
       set_color -b cyan
-      set_color white
     end
 
     echo " $ref "
@@ -38,5 +38,5 @@ function fish_prompt --description "Write out the prompt (based on classic)"
 
   set suffix ' 😈 '
 
-	echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) ' ' (get_git_status) "$suffix "
+	echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) ' ' (get_git_status) "$suffix "
 end
