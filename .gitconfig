@@ -34,4 +34,4 @@
 [diff]
         tool = Kaleidoscope
 [commit]
-        template = /Users/koenweyn/.stCommitMsg
+        template = ~/.stCommitMsg
