@@ -24,9 +24,6 @@ alias ll='ls -alh'
 ulimit -n 65536
 ulimit -u 2048
 
-## exports
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home
-export P4CONFIG=~/.p4config
-export P4PORT=localhost:1777
-export P4USER=kweyn
-
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/koenweyn/.sdkman"
+[[ -s "/Users/koenweyn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/koenweyn/.sdkman/bin/sdkman-init.sh"
