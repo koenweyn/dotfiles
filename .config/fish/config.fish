@@ -45,3 +45,7 @@ for file in ~/.environment/*
 		echo "File does not exist: $file"
 	end
 end
+
+# Path
+
+set PATH $PATH ~/.yarn/bin
