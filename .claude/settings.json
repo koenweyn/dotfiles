@@ -1,0 +1,10 @@
+{
+  "effortLevel": "high",
+  "theme": "auto",
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0,
+    "refreshInterval": 10
+  }
+}

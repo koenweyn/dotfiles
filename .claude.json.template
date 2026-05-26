@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "oracle-local": {
+      "command": "/opt/homebrew/Caskroom/sqlcl/26.1.0.086.1709/sqlcl/bin/sql",
+      "args": [
+        "-mcp"
+      ]
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "headers": {
+        "Authorization": "Basic <ATLASSIAN_MCP_TOKEN>"
+      }
+    }
+  }
+}
