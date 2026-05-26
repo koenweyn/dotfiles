@@ -1,5 +1,6 @@
 export PS1="\h:\W 😈  "
 export CLICOLOR=1
+export AWS_PROFILE=temp
 
 ##aliases
 
@@ -20,10 +21,10 @@ alias chromedev='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome 
 #general
 alias ll='ls -alh'
 
-## bigger open file limit
-ulimit -n 65536
-ulimit -u 2048
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/koenweyn/.sdkman"
-[[ -s "/Users/koenweyn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/koenweyn/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/Users/koenweyn/.sdkman"
+#[[ -s "/Users/koenweyn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/koenweyn/.sdkman/bin/sdkman-init.sh"
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
